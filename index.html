@@ -1,0 +1,148 @@
+<head>
+    <style>
+        .introduzione {
+            background-color: lightgray;
+            padding: 2px;
+        }
+        .lista {
+            border: 1px solid black;   
+        }
+        .musica {
+            background-color: lightgray;
+        }
+        .mappa {
+            background-color: lightgray;
+        }
+        .pulsante {
+            border: 1px solid black;   
+            padding:5px;
+            margin-top: 15px;
+        }
+        .titoletto {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .scorre {
+          animation: cambioColori 3s infinite alternate;
+        }
+
+        #mappa {
+            display: none;
+        }
+
+        #video {
+            display: none;
+        }
+
+        @keyframes cambioColori {
+            0%{color: black;}
+            25%{color: blue;}
+            50%{color: green;}
+            75%{color: purple;}
+            100%{color:black;}
+        }
+
+        .riferimenti {
+            background-color: lightgray;
+            display: flex;
+            justify-content: space-evenly;
+            padding: 20px;
+        }
+
+        .descrizione {
+            background-color: lightgray;
+        }
+
+        .bio {
+            padding: 10px;
+        }
+
+        footer {
+            margin-top:40px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header class="introduzione">
+        <h1>Nome Cognome</h1>
+        <h3>Professione</h3>
+        <marquee class="scorre">Testo a scelta</marquee>
+    </header>
+    <main>
+        <ul class="lista">
+            <b>Anagrafica</b>
+            <li>Data di nascita: Data</li>
+            <li>Luogo di nascita: Luogo</li>
+            <li>Residenza: Luogo</li>
+            <li>Altezza: metri</li>
+        </ul>
+        <div class="descrizione">
+            <h5 class="titoletto">Bio <i class="fa fa-thumbs-up"></i></h5>
+            <p class="bio">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            </p>
+        </div>
+        <div class="musica">
+            <h5 id="musica" class="titoletto" onclick="appari()" >Musica <i class="fa fa-music"></i></h5>
+            <div id="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/CwdrtwZiQ9E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="mappa">
+            <h5 class="titoletto" onclick="appariMappa()">Luogo di lavoro <i class="fa fa-map-marker"></i></h5>
+            <div id="mappa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d100967.13806823267!2d55.216350438828!3d25.157885602585953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sit!4v1674563482627!5m2!1sen!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <!-- <span>
+            <a class="pulsante" href="mailto:e-mail@mail.it">Contattami</a>
+        </span> -->
+        <div class="riferimenti">
+            <a href="www.google.it">
+                <i class="fa fa-instagram"></i>
+            </a>
+            <a href="www.google.it">
+                <i class="fa fa-facebook"></i>
+            </a>
+            <a href="mailto:e-mail@mail.it">
+                <i class="fa fa-envelope-o"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        console.log("funziono");
+
+        var b = 0; 
+
+        function appariMappa() {
+            if (b == 0) {
+                document.getElementById("mappa").style.display = "initial";
+                b = 1;
+            }
+            else if (b ==1) {
+                document.getElementById("mappa").style.display = "none";
+                b = 0;
+            }
+        }
+
+        var a = 0; 
+
+        function appari() {
+            if (a == 0) {
+                document.getElementById("video").style.display = "initial";
+                a = 1;
+            }
+            else if (a == 1) {
+                document.getElementById("video").style.display = "none";
+                a = 0; 
+            } 
+        }
+       
+    </script>
+</body>
+
